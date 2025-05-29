@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Resume - Surendharaaa</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(45deg, #f4d03f 0%, #fbeee6 50%, #f5cba7 100%);
+            color: #5d4037;
+            padding: 2rem;
+            min-height: 100vh;
+            animation: backgroundShift 15s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 248, 240, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .container::before {
+            content: '❤️';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 100px;
+            opacity: 0.1;
+            transform: rotate(15deg);
+            animation: pulse 2s ease-in-out infinite;
+            color: #8b4513;
+        }
+
+        @keyframes pulse {
+            0% { transform: rotate(15deg) scale(1); }
+            50% { transform: rotate(15deg) scale(1.1); }
+            100% { transform: rotate(15deg) scale(1); }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #d2691e;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b4513, transparent);
+            animation: borderGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes borderGlow {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #8b4513;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.2);
+            animation: titleWave 3s ease-in-out infinite;
+        }
+
+        @keyframes titleWave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #a0522d;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .title:hover {
+            transform: translateX(10px);
+            color: #8b4513;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-left: 2rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        .section:hover {
+            transform: translateX(10px);
+            background: rgba(210, 105, 30, 0.1);
+            border-radius: 10px;
+            padding: 1rem 1rem 1rem 3rem;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .section::before {
+            content: attr(data-emoji);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+            transition: all 0.3s ease;
+            color: #6d4c41;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            color: #8b4513;
+        }
+
+        li::before {
+            content: '♥';
+            position: absolute;
+            left: 0;
+            color: #d2691e;
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .final-message {
+            background: linear-gradient(135deg, #fdf5e6 0%, #faebd7 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            color: #8b4513;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+            transform: scale(0.95);
+            transition: all 0.3s ease;
+        }
+
+        .final-message:hover {
+            transform: scale(1);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #8b4513;
+            text-align: right;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: signatureAppear 1s ease-out 1s forwards;
+        }
+
+        @keyframes signatureAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotate(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            font-size: 2rem;
+            animation: floatAndSpin 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 5px rgba(139, 69, 19, 0.5));
+            color: #d2691e;
+        }
+
+        @keyframes floatAndSpin {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+        .floating-hearts:nth-child(odd) {
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+
+        .floating-hearts:nth-child(even) {
+            animation-duration: 6s;
+            animation-delay: 0.5s;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding-left: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💝 Your Certified Idiot 💝</h1>
+            <div class="title">Surendharaa (Dream boy)</div>
+            <div class="title">Professional Smile Generator | Certified Voice Admirer | Your Personal Idiot</div>
+            <div class="title">Status: Hopelessly in love with Dharzzz</div>
+            <div class="title">Location: Somewhere between your smile and your "idiot"</div>
+        </div>
+
+        <div class="section" data-emoji="💌">
+            <h2>My Mission</h2>
+            <p>To keep making you smile, be the person who listens to your every random question, share songs with you forever, and quietly love you — even when I forget things 😅 — just like I always have.</p>
+        </div>
+
+        <div class="section" data-emoji="💖">
+            <h2>Love Chronicles</h2>
+            <p>Unofficial Boyfriend of Dharzzz — From the moment I saw those eyes till now</p>
+            <ul>
+                <li>Experienced professional at catching feelings</li>
+                <li>Advanced level in smiling like an idiot after hearing your voice</li>
+                <li>Fluent in "Dharzzz language" (especially when you call me idiot, which I secretly love)</li>
+                <li>Proud listener of your song recs and question marathons</li>
+            </ul>
+        </div>
+
+        <div class="section" data-emoji="⭐">
+            <h2>My Special Features</h2>
+            <ul>
+                <li>100% loyal and emotionally soft for you</li>
+                <li>Strong ability to fall for your voice over and over again</li>
+                <li>Not great with remembering stuff... but never forgets how you make me feel</li>
+                <li>Naturally bad at hiding how much I adore you</li>
+                <li>Can write resumes just to tell you how special you are</li>
+            </ul>
+        </div>
+
+        <div class="section" data-emoji="🎵">
+            <h2>Love Language Skills</h2>
+            <ul>
+                <li>Plays your favorite songs and thinks of you</li>
+                <li>Smiles like a fool reading your texts</li>
+                <li>Expert at being your favorite "idiot"</li>
+                <li>Not perfect, but perfectly yours</li>
+                <li>Low memory, high feelings ❤️</li>
+            </ul>
+        </div>
+
+        <div class="section" data-emoji="🏆">
+            <h2>Milestones of My Heart</h2>
+            <ul>
+                <li>Survived the silence when you didn't say what I hoped to hear</li>
+                <li>Kept loving you even when I wasn't sure if you felt the same</li>
+                <li>Collected 100+ memories just from our conversations</li>
+                <li>Discovered the most beautiful eyes and voice in one person</li>
+            </ul>
+        </div>
+
+        <div class="section" data-emoji="💫">
+            <h2>Our Special Moments</h2>
+            <ul>
+                <li>Listening to songs that somehow always feel like "us"</li>
+                <li>Random deep talks and fun questions you ask</li>
+                <li>Laughing over silly things, like you calling me "idiot"</li>
+                <li>Just being around you — even virtually — feels enough</li>
+            </ul>
+        </div>
+
+        <div class="section" data-emoji="🌈">
+            <h2>Dreams With You</h2>
+            <ul>
+                <li>Listen to your voice in person, not just over the phone</li>
+                <li>Share playlists, sunsets, and silence — together</li>
+                <li>Get scolded sweetly when I forget something (and secretly enjoy it)</li>
+                <li>Always be the person you trust with your weirdest thoughts</li>
+                <li>Travel, make memories, and create a story that feels like our own song</li>
+                <li>Be your reason to smile on bad days and better days</li>
+                <li>Call you mine — not just in my heart, but out loud, proudly, and forever</li>
+            </ul>
+        </div>
+
+        <div class="final-message">
+            <p>Happy Birthday, Dharzzz ❤️🎂</p>
+            <p>You already know how much I love you — I don't have to say it again, because your smile, your voice, and the way you call me "idiot" say it all.</p>
+            <p>You're not just someone special to me, you're my favorite part of every day. With you, I feel completely myself, and loving you feels like the easiest, most natural thing in the world.</p>
+            <p>I know you feel the same — it's written in every look, every laugh, and every little moment we share.</p>
+            <p>So today, on your birthday, I just want to say:<br>
+            I'm yours, completely and without doubt.<br>
+            Let's stop hiding how we feel — I'm ready if you are.</p>
+            <p>No rush, no pressure — just us, being real and honest.</p>
+            <p>I love you, Dharzzz. And I'm so happy to be yours.</p>
+            <div class="signature">Forever your idiot,<br>Surendharaa (Dream boy) 💝</div>
+        </div>
+    </div>
+
+    <div class="floating-hearts" style="top: 10%; left: 5%">💝</div>
+    <div class="floating-hearts" style="top: 30%; right: 8%">💖</div>
+    <div class="floating-hearts" style="top: 50%; left: 10%">🎵</div>
+    <div class="floating-hearts" style="top: 70%; right: 5%">💫</div>
+</body>
+</html> 

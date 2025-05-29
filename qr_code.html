@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Resume QR Code</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #f4d03f 0%, #fbeee6 50%, #f5cba7 100%);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+        }
+        h1 {
+            color: #8b4513;
+            margin-bottom: 2rem;
+        }
+        #qrcode {
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .instructions {
+            margin-top: 2rem;
+            color: #8b4513;
+            max-width: 300px;
+            line-height: 1.6;
+        }
+        .download-btn {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #8b4513;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            background: #a0522d;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scan Me ❤️</h1>
+        <div id="qrcode"></div>
+        <div class="instructions">
+            <p>Scan this QR code to read something special...</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: "https://surendhars49.github.io/for-dharzzz/",
+                width: 256,
+                height: 256,
+                colorDark : "#8b4513",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        };
+    </script>
+</body>
+</html> 
